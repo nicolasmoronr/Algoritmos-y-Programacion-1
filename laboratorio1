@@ -1,0 +1,63 @@
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+
+int invertir(int n)
+{
+	int d,newnro = 0;
+	while(n > 0)
+	{
+		d = n % 10;
+		newnro=newnro*10+d;
+		n = n / 10;
+	}
+	return (newnro);
+}
+
+int eliminarDigImpares (int n)
+{
+	int d,newnro=0,c=0,k=1;
+	while(n > 0)
+	{
+		d = n % 10;
+		if((d==0) && (k==1))
+		{
+			c++;
+		}
+		else
+		{
+			k=0;
+		}
+		if (d % 2 == 0)
+	
+		{
+		newnro=newnro*10+d;
+		}
+		n=n/10;
+	}
+	newnro=invertir(newnro);
+	if(c>0)
+	{
+		newnro=newnro*powf(10,c);
+	}
+	return(newnro);
+}
+
+int sumarDigOrdenadosAsc(int n)
+{
+	int d,s=0,digAnt;
+	n = invertir (n);
+	digAnt
+
+
+void main()
+{
+	int nro,r;
+	cout <<"introducir un numero natural :";
+	cin>>nro;
+	r=eliminarDigImpares(nro);
+	cout<<"EL resultado es --->> :"<< r;
+	getch ();
+}
