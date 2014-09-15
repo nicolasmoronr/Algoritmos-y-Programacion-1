@@ -1,0 +1,61 @@
+// aaaaaaaaa.cpp : Defines the entry point for the console application.
+//
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+
+int tamano;
+
+using namespace std;
+
+int llamar_menu(void)
+{ int opc;
+	std::cout<<"INGRESE LA OPCION QUE DESEE:"<<endl;
+	std::cout<<"1.- LLenar vector"<<endl;
+	std::cout<<"2.- Mostrar Vector"<<endl;
+	std::cout<<"3.- Verificar valor primo"<<endl;
+	std::cout<<"0.- Salir"<<endl;
+    cin>>opc;
+	return opc;
+}
+
+void llenar_vector(int v[])
+{
+	int i;	
+
+	cout << " introducir tamaño del vector: ";
+	cin >> tamano ;
+
+	for (i=0;i<tamano;i++)
+	{
+		cout << "Introducir valor para la posicion "<< i+1<<" :";
+		cin >> v[i];
+	}
+}
+
+void mostrar_vector(int v[])
+{
+	int i ;
+	for (i=0;i<tamano;i++)
+	{
+		cout << "v["<< i+1<<"]:" << v[i] << endl;
+	}
+}
+
+
+int main(void)
+{  int opcion;
+	int v[100];
+	
+	do{
+		opcion = llamar_menu();
+		switch(opcion){
+			case 1: llenar_vector(v);
+			case 2: mostrar_vector(v);
+//			case 3: comprobar_primo(v);
+		}
+	} while (opcion !=0);
+//	sleep(10);
+	return 0;
+}
+
